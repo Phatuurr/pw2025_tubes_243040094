@@ -10,7 +10,7 @@
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
     <div class="container-fluid px-lg-5">
-        <a class="navbar-brand" href="home.php">
+        <a class="navbar-brand" href="index.php">
             <img src="../Image/logo web horizontal.png" alt="SceneSide Logo" style="height: 65px">
         </a>
         <div class="d-flex align-items-center ms-auto">

@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {
 }
 
 if (!isset($_GET['movie_id']) || !is_numeric($_GET['movie_id'])) {
-    header("Location: home.php");
+    header("Location: index.php");
     exit;
 }
 
