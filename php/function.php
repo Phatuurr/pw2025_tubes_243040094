@@ -84,7 +84,7 @@ function login($data) {
                 header("Location: admin/admin.php"); // Pastikan path ini benar
             } else {
                 // Jika user biasa, arahkan ke home
-                header("Location: index.php");
+                header("Location: ../index.php");
             }
             exit;
         }

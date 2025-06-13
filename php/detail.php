@@ -3,7 +3,7 @@ session_start();
 require 'function.php';
 
 if (!isset($_GET['id'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit;
 }
 
@@ -39,7 +39,7 @@ if (strpos($trailer_url, 'watch?v=') !== false) {
 
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../index.php">
                 <img src="../Image/logo web type white.png" alt="SceneSide Logo" style="height: 40px;">
             </a>
             <div class="d-flex align-items-center ms-auto">

@@ -14,14 +14,14 @@ if (hapusFilm($id) > 0) {
     echo "
         <script>
             alert('Data film berhasil dihapus!');
-            document.location.href = 'index.php';
+            document.location.href = '../../index.php';
         </script>
     ";
 } else {
     echo "
         <script>
             alert('Data film GAGAL dihapus!');
-            document.location.href = 'index.php';
+            document.location.href = '../../index.php';
         </script>
     ";
 }

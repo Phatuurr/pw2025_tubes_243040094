@@ -40,7 +40,7 @@ if (isset($_GET['keyword']) && !empty($_GET['keyword'])) {
         <h1>Admin Dashboard</h1>
         <div>
             <span class="me-3">Selamat datang, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
-            <a href="../index.php" class="btn btn-outline-light me-2" target="_blank">Home Page</a>
+            <a href="../../index.php" class="btn btn-outline-light me-2" target="_blank">Home Page</a>
             <a href="../logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>

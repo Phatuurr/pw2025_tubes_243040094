@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
 
 <div class="container mt-5 mb-5">
     <h1>Edit Film</h1>
-    <a href="index.php" class="btn btn-secondary mb-3">Kembali ke Dashboard</a>
+    <a href="../../index.php" class="btn btn-secondary mb-3">Kembali ke Dashboard</a>
 
     <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?php echo $movie['id']; ?>">
