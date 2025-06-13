@@ -1,0 +1,410 @@
+@font-face {
+  font-family: Oxanium extrabold;
+  src: url(../font/Oxanium-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: Geoform extrabold;
+  src: url(../font/Geoform-ExtraBold.otf);
+}
+
+/* =================================
+   1. VARIABEL Warna
+   ================================= */
+:root {
+  --primary-green: #99f912;
+  --background-dark: #101010;
+  --card-dark: #1a1a1a;
+  --text-light: #f5f5f5;
+  --text-secondary: #aaa;
+  --border-color: #2a2a2a;
+}
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  font-family: Oxanium extrabold;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =================================
+   Navbar
+   ================================= */
+.navbar {
+  background-color: rgba(16, 16, 16, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(16, 16, 16, 0.9);
+}
+
+.navbar-brand img {
+  height: 30px;
+  width: auto;
+}
+
+.navbar .nav-item .nav-link {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-item .nav-link:hover,
+.navbar .nav-item .nav-link.active {
+  color: var(--text-light);
+}
+
+.navbar .nav-item .nav-link i {
+  font-size: 1.5rem;
+}
+
+/* =================================
+   Hero Carusel
+   ================================= */
+.hero-section {
+  height: 85vh;
+  min-height: 600px;
+  margin-top: -50px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+#movieCarousel .carousel-inner,
+#movieCarousel .carousel-item {
+  height: 100%;
+}
+
+#movieCarousel .carousel-background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+#movieCarousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to right,
+      rgba(16, 16, 16, 1) 0%,
+      rgba(16, 16, 16, 0.8) 30%,
+      transparent 60%
+    ),
+    linear-gradient(to top, rgba(16, 16, 16, 1) 0%, transparent 40%);
+  z-index: 1;
+}
+
+#movieCarousel .carousel-caption {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  top: auto;
+  transform: none;
+  z-index: 2;
+  text-align: left;
+  width: 50%;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero-rating {
+  font-size: 1.2rem;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.hero-rating i {
+  color: #ffc107;
+}
+
+.btn-trailer {
+  background-color: var(--primary-green);
+  color: #000;
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: transform 0.2s ease;
+}
+.btn-trailer:hover {
+  transform: scale(1.05);
+}
+
+/* Navigasi Carousel Kustom */
+.carousel-navigation {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  z-index: 3;
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-custom-nav {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-custom-nav:hover {
+  background-color: var(--primary-green);
+  color: #000;
+}
+
+/* =================================
+   UPCOMING MOVIES
+   ================================= */
+.upcoming-section {
+  border-radius: 20px;
+  margin-top: -50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.upcoming-header {
+  font-weight: 700;
+  color: #99f912;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
+  height: 35px;
+}
+
+.upcoming-list {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.upcoming-list .upcoming-item + .upcoming-item {
+  margin-top: 0.5rem;
+}
+
+.upcoming-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.upcoming-item:hover {
+  color: var(--text-light);
+}
+
+.upcoming-item-poster {
+  width: 130px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.upcoming-item-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.upcoming-item-tahun {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* =================================
+    CARD SLIDER (REKOMENDASI)
+   ================================= */
+.slider-wrapper {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding-bottom: 1rem; /* Ruang untuk scrollbar */
+  scrollbar-color: var(--border-color) var(--card-dark);
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.slider-wrapper::-webkit-scrollbar-track {
+  background: var(--card-dark);
+  border-radius: 10px;
+}
+
+.slider-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 10px;
+}
+
+.movie-card-link {
+  display: block;
+  flex: 0 0 220px;
+  min-width: 220px;
+  transition: transform 0.3s ease;
+}
+
+
+
+.movie-card {
+  background-color: var(--card-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.poster-wrapper {
+  position: relative;
+}
+
+.movie-card .card-img-top {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.btn-watchlist-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 46px;
+  background-color: rgba(16, 16, 16, 0.7);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-bottom-right-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.btn-watchlist-overlay:hover {
+  background-color: var(--primary-green);
+  color: #000;
+}
+
+.movie-card .card-body {
+  padding: 1rem;
+}
+
+.movie-card .card-title {
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card .card-rating {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.movie-card .card-rating i {
+  color: var(--primary-green);
+}
+
+.btn-watchlist-overlay {
+  /* ... style Anda yang sudah ada ... */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  /* ... dll ... */
+}
+
+/* Style BARU untuk tombol saat sudah ada di wishlist */
+.btn-watchlist-overlay.in-wishlist {
+  background-color: #99f912; /* Warna hijau limau */
+  color: #000; /* Warna ikon menjadi hitam */
+}
+
+.btn-watchlist-overlay.in-wishlist i {
+  font-size: 1.8rem; /* Sedikit perbesar ikon ceklis */
+  font-weight: bold;
+}
+
+.site-footer {
+  background-color: #000000; /* Latar belakang hitam pekat */
+  color: #ffffff; /* Teks putih */
+  padding: 3rem 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  height: 35px; /* Sesuaikan tinggi logo */
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Jarak antar link */
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #99f912; /* Aksen hijau saat di-hover */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon-link:hover {
+  background-color: #99f912;
+  color: #000;
+}
+
+.footer-copyright {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+}

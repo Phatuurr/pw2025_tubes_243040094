@@ -1,0 +1,155 @@
+/* CSS Kustom untuk Tampilan Detail */
+body {
+  background-color: #181818;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.main-container {
+  background-color: #212121;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.movie-title {
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.movie-year {
+  color: #a0a0a0;
+  font-size: 1.25rem;
+}
+
+.rating-box {
+  background-color: #99f912;
+  color: #000000;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.rating-box .bi-star-fill {
+  font-size: 1.25rem;
+  vertical-align: middle;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.poster-img {
+  aspect-ratio: 2 / 3;
+}
+.background-img {
+  aspect-ratio: 16 / 9;
+}
+
+.trailer-placeholder {
+  background-color: #333;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  /* PERUBAHAN DI SINI */
+  min-height: 300px;
+}
+iframe.trailer-placeholder {
+  border: none;
+}
+
+.synopsis-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.synopsis-text {
+  color: #dcdcdc;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.credits-section {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.credit-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #444;
+}
+.credit-item-label {
+  font-weight: 600;
+  color: #a0a0a0;
+  min-width: 100px;
+}
+.credit-item-value {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.site-footer {
+  background-color: #000000; /* Latar belakang hitam pekat */
+  color: #ffffff; /* Teks putih */
+  padding: 3rem 0 2rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  height: 35px; /* Sesuaikan tinggi logo */
+  margin-bottom: 2rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* Jarak antar link */
+  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+  color: #99f912; /* Aksen hijau saat di-hover */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-icon-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon-link:hover {
+  background-color: #99f912;
+  color: #000;
+}
+
+.footer-copyright {
+  color: #a0a0a0;
+  font-size: 0.8rem;
+}

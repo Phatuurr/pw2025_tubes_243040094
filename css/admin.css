@@ -1,0 +1,53 @@
+
+        body {
+            background-color: #121212;
+            color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
+        .header-admin {
+            border-bottom: 1px solid #333;
+            padding-bottom: 1.5rem;
+        }
+        .header-admin h1 {
+            font-weight: 800;
+        }
+        .btn-logout {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .btn-logout:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        .btn-add {
+            background-color: #99f912;
+            border-color: #99f912;
+            color: #000;
+            font-weight: 600;
+        }
+        .btn-add:hover {
+            background-color: #82d30f;
+            border-color: #82d30f;
+            color: #000;
+        }
+        .form-control-dark {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #fff;
+        }
+        .form-control-dark:focus {
+            background-color: #333;
+            border-color: #99f912;
+            box-shadow: none;
+            color: #fff;
+        }
+        .table-dark-custom {
+            background-color: #212121;
+        }
+        .table-dark-custom th {
+            background-color: #343a40;
+            border-color: #454d55;
+        }
+        .table-dark-custom td, .table-dark-custom th {
+            border-color: #373b3e;
+        }

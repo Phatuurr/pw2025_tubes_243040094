@@ -1,0 +1,100 @@
+@font-face {
+  font-family: Oxanium extrabold;
+  src: url(../font/Oxanium-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: Geoform extrabold;
+  src: url(../font/Geoform-ExtraBold.otf);
+}
+
+body {
+  background-image: url(../Image/bgregister.png);
+}
+
+.container {
+  justify-content: left;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.register {
+  width: 700px;
+  height: 640px;
+  text-align: center;
+  justify-items: center;
+  /* background-color: rebeccapurple; */
+}
+
+.register img {
+  padding-top: 5px;
+}
+
+.register h3 {
+    font-family: Oxanium extrabold;
+    text-align: left;
+    color: white;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.register h1 {
+  padding-top: 10px;
+  font-family: Geoform extrabold;
+  color: white;
+  font-size: 50px;
+}
+
+
+.email {
+  width: 500px;
+  height: 40px;
+  padding-left: 20px;
+  background-color: #2e2e2e;
+  border-radius: 20px;
+  border: solid #99f912 2px;
+  color: white;
+}
+
+.username {
+    width: 500px;
+    height: 40px;
+    padding-left: 20px;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+    border: solid #99f912 2px;
+    color: white;
+}
+
+.pass {
+  width: 500px;
+  height: 40px;
+  padding-left: 20px;
+  background-color: #2e2e2e;
+  border-radius: 20px;
+  border: solid #99f912 2px;
+  color: white;
+}
+
+.submit {
+    width: 500px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: #99f912;
+    font-family: Oxanium extrabold;
+    font-size: 25px;
+    clip-path: polygon(
+      0% 10px,
+      20px 0%,
+      100% 0%,
+      100% calc(100% - 10px),
+      calc(100% - 20px) 100%,
+      0% 100%
+    );
+  }
+  
+  .submit:hover {
+    border: 3px solid white;
+    background-color: white;
+  }
+

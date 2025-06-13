@@ -1,0 +1,127 @@
+@font-face {
+    font-family: Oxanium extrabold;
+    src: url(../font/Oxanium-ExtraBold.ttf);
+  }
+  
+  @font-face {
+    font-family: Geoform extrabold;
+    src: url(../font/Geoform-ExtraBold.otf);
+  }
+  
+  body {
+    background-color: #151515;
+  }
+  
+  .container {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .bg-login {
+    width: 1000px;
+    height: 700px;
+    background-image: url(../Image/Sampul.png);
+  }
+  
+  .login {
+    text-align: center;
+    /* background-color: red; */
+    width: 480px;
+    height: 500px;
+    margin: auto;
+    margin-right: 100px;
+    margin-top: 70px;
+    justify-items: center;
+  }
+  
+  .login h2 {
+    padding-top: 15px;
+    font-family: Oxanium extrabold;
+    font-size: 30px;
+    margin-bottom: 0;
+    color: white;
+  }
+  .login h1 {
+    font-family: Geoform extrabold;
+    font-size: 50px;
+    margin-top: -15px;
+    color: white;
+  }
+
+  .color {
+    color: #99f912;
+  }
+
+  h3 {
+    color: white;
+    font-family: Oxanium extrabold;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .label {
+    margin-top: 20px;
+  }
+  
+  .email {
+    width: 400px;
+    height: 40px;
+    padding-left: 20px;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+    border: solid #99f912 2px;
+    color: white;
+  }
+  
+  .pass {
+    width: 400px;
+    height: 40px;
+    padding-left: 20px;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+    border: solid #99f912 2px;
+    color: white;
+  }
+  
+  .submit {
+    width: 400px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #99f912;
+    font-family: Oxanium extrabold;
+    font-size: 25px;
+    clip-path: polygon(
+      0% 10px,
+      20px 0%,
+      100% 0%,
+      100% calc(100% - 10px),
+      calc(100% - 20px) 100%,
+      0% 100%
+    );
+  }
+  
+  .submit:hover {
+    background-color: white;
+  }
+
+  
+  .login .garis {
+    margin-top: 30px;
+    width: 300px;
+    height: 2px;
+    color: #99f912;
+    background-color: #99f912;
+  }
+  .login .register {
+    padding-top: 10px;
+  }
+  
+  
+  .register a {
+    text-decoration: none;  
+    color: #99f912;
+    font-family: Oxanium extrabold;
+    font-size: 20px;
+  }
+  

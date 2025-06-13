@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Oxanium extrabold;
+    src: url(../font/Oxanium-ExtraBold.ttf);
+  }
+  
+  @font-face {
+    font-family: Geoform extrabold;
+    src: url(../font/Geoform-ExtraBold.otf);
+  }
+
+body {
+    background-color: #151515;
+    height: 1000px;
+  }
+
+.container {
+    height: 700px;
+    /* background-color: red; */
+    justify-content: center;
+    justify-items: center;  
+    align-items: center;
+    display: flex;
+}
+
+
+.kotak {
+        width: 70%;
+        height: 400px;
+        background-color: #292929;
+        border: 2px solid #99F912;
+        border-radius: 20px;
+        
+        /* --- Perubahan di sini --- */
+        display: flex;
+        flex-direction: column; /* Menyusun item secara vertikal */
+        align-items: center;     /* Menengahkan item secara horizontal */
+        justify-content: center; /* Menengahkan item secara vertikal */
+        gap: 5px /* Opsional: Memberi jarak antar item */
+    }
+
+.kotak img {
+    margin-top: 30px;
+    /* background-color: red; */
+}
+
+.kotak h1 {
+    font-family: Geoform extrabold;
+    color: white;
+    margin-top: 20px;
+    /* background-color: red; */
+}
+
+.kotak .login {
+    width: 200px;
+    height: 60px;
+    background-color: #99F912;
+
+    /* --- Tambahkan baris ini --- */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+
+.kotak a {
+    text-decoration: none;
+    color: black;
+    font-family: Oxanium extrabold;
+}
+
+.kotak a .login h2 {
+    padding-top: 10px;
+}
+
+
