@@ -64,7 +64,7 @@ function login($data) {
     $login_identifier = $data["username"] ?? $data["email"]; 
     $password = $data["password"];
 
-    // PERBAIKAN: Tambahkan 'profile_picture' ke dalam query SELECT
+    // Tambahkan 'profile_picture' ke dalam query SELECT
     $stmt = $conn->prepare("SELECT id, username, password, role, foto FROM user WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $login_identifier, $login_identifier);
     $stmt->execute();
@@ -115,12 +115,15 @@ function getMoviesBySection($conn, $section, $limit = 5) {
 
 function getMoviesByGenre($conn, $genre, $limit = 10) {
     $sql = "SELECT * FROM movies 
-            WHERE genre = ? 
-            AND ((seleksi IS NULL OR seleksi = '') OR seleksi = 'slider') 
+            WHERE genre LIKE ? 
+            AND seleksi = 'slider' 
+            ORDER BY rating DESC
             LIMIT ?";
 
+    $searchTerm = '%' . $genre . '%';
+    
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("si", $genre, $limit);
+    $stmt->bind_param("si", $searchTerm, $limit);
     $stmt->execute();
     $result = $stmt->get_result();
     return $result->fetch_all(MYSQLI_ASSOC);
@@ -150,7 +153,7 @@ function getAllMovies($conn, $limit, $offset, $sort_by = 'nama_asc') {
     ];
     $order_by_clause = $allowed_sort[$sort_by] ?? 'nama ASC'; 
 
-    // PERBAIKAN: Tambahkan 'seleksi' dan 'genre' ke dalam daftar kolom SELECT
+    // Tambahkan 'seleksi' dan 'genre' ke dalam daftar kolom SELECT
     $sql = "SELECT id, nama, poster, rating, tahun, seleksi, genre, sinopsis, studio, director, stars FROM movies ORDER BY $order_by_clause LIMIT ? OFFSET ?";
     
     $stmt = $conn->prepare($sql);

@@ -83,9 +83,7 @@ $genres_to_display = [
                 <span class="garis"></span>
                 <div class="upcoming-list">
                     <?php foreach ($upcoming_movies as $movie): ?>
-                        <!-- ======================================================= -->
-                        <!-- PERUBAHAN DI SINI -->
-                        <!-- ======================================================= -->
+                       
                         <a href="detail.php?id=<?php echo $movie['id']; ?>" class="upcoming-item">
                             <img src="../Image/<?php echo htmlspecialchars($movie['poster'] ?? 'default_poster.jpg'); ?>" alt="Poster <?php echo htmlspecialchars($movie['nama'] ?? ''); ?>" class="upcoming-item-poster">
                             <span class="upcoming-item-title"><?php echo htmlspecialchars($movie['nama'] ?? 'Segera Tayang'); ?></span>

@@ -1,8 +1,7 @@
 <?php
 session_start();
-require 'function.php'; // Memanggil file fungsi
+require 'function.php'; 
 
-// Logika PHP di sini jauh lebih sederhana, hanya untuk set judul awal
 $search_query = $_GET['query'] ?? '';
 $sort_by = $_GET['sort'] ?? 'nama_asc';
 $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($search_query) . '"' : "Telusuri Semua Film";
@@ -31,11 +30,9 @@ $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($sear
             <h1 id="header-title"><?php echo $header_title; ?></h1>
             <div class="search-controls-container">
                 <div>
-                    <!-- Kolom Pencarian -->
                     <div class="search-form-wrapper mb-3">
                         <input type="search" autofocus name="query" id="keyword" class="form-control form-control-search" placeholder="Cari film atau serial TV..." value="<?php echo htmlspecialchars($search_query); ?>">
                     </div>
-                    <!-- Kolom Sorting di bawahnya -->
                     <div class="sort-wrapper d-flex justify-content-center">
                         <select name="sort" id="sort_by" class="form-select w-auto" title="Urutkan hasil">
                             <option value="nama_asc" <?php if ($sort_by == 'nama_asc') echo 'selected'; ?>>(A-Z)</option>
@@ -48,7 +45,6 @@ $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($sear
             </div>
         </header>
 
-        <!-- Container untuk hasil live search -->
         <div id="results-container">
 
         </div>
@@ -61,35 +57,28 @@ $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($sear
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mendapatkan elemen dari halaman
             const keywordInput = document.getElementById('keyword');
             const sortBySelect = document.getElementById('sort_by');
             const resultsContainer = document.getElementById('results-container');
             const headerTitle = document.getElementById('header-title');
             let searchTimeout;
 
-            // Fungsi utama untuk memuat konten secara dinamis
             function loadContent(page = 1) {
                 const keyword = keywordInput.value;
                 const sortBy = sortBySelect.value;
-                // Membuat URL untuk request ke backend
                 const url = `ajax/livesearch.php?keyword=${encodeURIComponent(keyword)}&sort=${sortBy}&page=${page}`;
 
-                // Mengubah judul halaman saat pengguna mengetik
                 if (keyword.trim() !== '') {
                     headerTitle.textContent = `Hasil untuk "${keyword}"`;
                 } else {
                     headerTitle.textContent = 'Telusuri Semua Film';
                 }
 
-                // Menampilkan spinner loading
                 resultsContainer.innerHTML = '<div class="text-center py-5"><div class="spinner-border text-light" role="status"><span class="visually-hidden">Loading...</span></div></div>';
 
-                // Mengirim request ke server
                 fetch(url)
                     .then(response => response.text())
                     .then(data => {
-                        // Menampilkan hasil dari server ke dalam container
                         resultsContainer.innerHTML = data;
                     })
                     .catch(error => {
@@ -98,20 +87,17 @@ $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($sear
                     });
             }
 
-            // Menjalankan pencarian saat pengguna mengetik (dengan sedikit jeda)
             keywordInput.addEventListener('keyup', function() {
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => {
                     loadContent(1);
-                }, 500); // Jeda 0.5 detik
+                }, 500); 
             });
 
-            // Menjalankan pencarian saat pengguna mengubah pilihan sorting
             sortBySelect.addEventListener('change', function() {
                 loadContent(1);
             });
 
-            // Menangani klik pada link pagination
             resultsContainer.addEventListener('click', function(event) {
                 if (event.target.matches('.page-link')) {
                     event.preventDefault(); // Mencegah reload halaman
@@ -126,7 +112,6 @@ $header_title = !empty($search_query) ? 'Hasil untuk "' . htmlspecialchars($sear
                 }
             });
 
-            // Memuat konten awal saat halaman pertama kali dibuka
             loadContent();
         });
     </script>

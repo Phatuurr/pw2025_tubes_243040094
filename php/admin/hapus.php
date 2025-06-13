@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Keamanan: Pastikan hanya admin yang bisa mengakses
 if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../login.php");
     exit;
@@ -9,7 +8,6 @@ if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
 
 require '../function.php';
 
-// Ambil ID dari URL
 $id = $_GET["id"];
 
 if (hapusFilm($id) > 0) {

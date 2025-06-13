@@ -6,9 +6,7 @@ if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
 }
 require '../function.php';
 
-// Cek jika form sudah disubmit
 if (isset($_POST["submit"])) {
-    // Panggil fungsi tambahFilm yang sudah diupdate untuk menangani semua field
     if (tambahFilm($_POST) > 0) {
         echo "<script>
                 alert('Data film baru berhasil ditambahkan!');

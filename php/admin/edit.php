@@ -6,15 +6,11 @@ if (!isset($_SESSION['login']) || $_SESSION['role'] !== 'admin') {
 }
 require '../function.php';
 
-// Ambil ID dari URL
 $id = $_GET['id'];
 
-// Ambil data film berdasarkan ID
 $movie = getMovieById($id);
 
-// Cek jika tombol submit sudah ditekan
 if (isset($_POST["submit"])) {
-    // Panggil fungsi editFilm dan cek hasilnya
     if (editFilm($_POST) > 0) {
         echo "<script>alert('Data film berhasil diubah!'); document.location.href = 'admin.php';</script>";
     } else {
@@ -58,7 +54,7 @@ if (isset($_POST["submit"])) {
         </div>
         <div class="mb-3">
             <label for="trailer" class="form-label">Link Trailer (YouTube):</label>
-            <input type="url" name="trailer" id="trailer" class="form-control" placeholder="https://www.youtube.com/watch?v=xxxx" value="<?php echo htmlspecialchars($movie['trailer']); ?>">
+            <input type="url" name="trailer" id="trailer" class="form-control"  value="<?php echo htmlspecialchars($movie['trailer']); ?>">
         </div>
         <div class="mb-3">
             <label for="seleksi" class="form-label">Seleksi Tampilan:</label>

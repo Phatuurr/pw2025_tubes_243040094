@@ -2,18 +2,15 @@
 session_start();
 require 'function.php';
 
-// Keamanan: Cek jika user belum login, tendang ke halaman login
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
 }
 
 $userId = $_SESSION['user_id'];
-$user = getUserById($conn, $userId); // Ambil data user saat ini
+$user = getUserById($conn, $userId); 
 
-// Proses form jika disubmit
 if (isset($_POST['update_profile'])) {
-    // Tambahkan user_id ke data POST untuk dikirim ke fungsi
     $_POST['user_id'] = $userId;
     
     if (updateProfile($conn, $_POST) !== false) {
@@ -22,7 +19,6 @@ if (isset($_POST['update_profile'])) {
                 document.location.href = 'profile.php';
               </script>";
     } else {
-        // Pesan error sudah dihandle di dalam fungsi itu sendiri
     }
 }
 ?>

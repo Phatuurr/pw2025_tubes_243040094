@@ -2,13 +2,11 @@
 session_start();
 require 'function.php';
 
-// Keamanan: Cek jika user belum login, tendang ke halaman login
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit;
 }
 
-// Pastikan koneksi berhasil
 if (!$conn) {
     die("Koneksi ke database gagal");
 }
@@ -78,7 +76,7 @@ $header_title = "Wishlist Saya";
                                         <img src="../Image/<?php echo htmlspecialchars($movie['poster'] ?? 'default_poster.jpg'); ?>" class="card-img-top" alt="Poster <?php echo htmlspecialchars($movie['nama']); ?>">
                                     </a>
 
-                                    <!-- Tombol Hapus (ceklis hijau) yang fungsional -->
+                                    <!-- Tombol Hapus ceklis hijau -->
                                     <a href="hapuswishlist.php?movie_id=<?php echo $movie['id']; ?>" class="btn-watchlist-overlay in-wishlist" title="Hapus dari Wishlist">
                                         <i class="bi bi-check-lg"></i>
                                     </a>

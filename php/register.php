@@ -4,17 +4,13 @@ require 'function.php';
 
 if(isset($_POST["register"])) {
 
-    // Fungsi registrasi akan mengembalikan nilai berdasarkan jumlah baris yang terpengaruh
-    // > 0 berarti berhasil, <= 0 berarti gagal
+   
     if(registrasi($_POST) > 0) {
         echo "<script>
                 document.location.href = 'berhasil.php'; // Arahkan ke halaman login setelah sukses
               </script>";
     } else {
-        // INI BAGIAN YANG DIPERBAIKI
-        // Jangan panggil mysqli_error() di sini.
-        // Cukup tampilkan pesan gagal umum, karena pesan spesifik
-        // seperti "username sudah ada" sudah di-handle di dalam fungsi registrasi().
+        
         echo "<script>
                 alert('Gagal menambahkan user baru! Silakan periksa kembali data Anda.');
               </script>";

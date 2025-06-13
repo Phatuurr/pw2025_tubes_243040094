@@ -1,7 +1,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Oxanium Extrabold';
             background-color: #121212;
         }
 

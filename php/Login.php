@@ -1,21 +1,15 @@
 <?php
-// LANGKAH 1: MULAI SESSION DAN PANGGIL FUNGSI
 require 'function.php';
 session_start();
 
-// Jika user sudah login, langsung arahkan ke halaman home
 if (isset($_SESSION['login'])) {
     header("Location: home.php");
     exit;
 }
 
-// Set penanda error default
 $error = false;
 
-// LANGKAH 2: GUNAKAN FUNGSI login() YANG SUDAH ADA
 if (isset($_POST["login"])) {
-    // Panggil fungsi login dari function.php
-    // Jika fungsi mengembalikan false, berarti login gagal
     if (login($_POST) === false) {
         $error = true;
     }
@@ -63,7 +57,7 @@ if (isset($_POST["login"])) {
                     <a href="register.php">- Belum Punya Akun? -</a>
                 </div>
 
-                <?php if ($error) : // <-- PERUBAHAN DI SINI: MENGHAPUS isset() 
+                <?php if ($error) : 
                 ?>
                     <div class="error-message">
                         Email atau password salah!

@@ -40,18 +40,15 @@ if (isset($_GET['keyword']) && !empty($_GET['keyword'])) {
         <h1>Admin Dashboard</h1>
         <div>
             <span class="me-3">Selamat datang, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>!</span>
-            <!-- TOMBOL BARU DITAMBAHKAN DI SINI -->
             <a href="../home.php" class="btn btn-outline-light me-2" target="_blank">Home Page</a>
             <a href="../logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
 
     <div class="row mb-4 align-items-center">
-        <!-- Kolom Tombol Tambah -->
         <div class="col-md-6">
             <a href="tambah.php" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Tambah Film Baru</a>
         </div>
-        <!-- Kolom Form Pencarian -->
         <div class="col-md-6">
             <form action="" method="get">
                 <div class="input-group">
